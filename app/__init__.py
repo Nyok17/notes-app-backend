@@ -1,7 +1,7 @@
 from flask import Flask
 from app.config import DevelopmentConfig, ProductionConfig
 from app.extensions import db, marsh, bcrypt, jwt, cors, migrate
-import os
+
 
 
 

@@ -2,6 +2,7 @@ from app.extensions import db, bcrypt
 from datetime import datetime, timezone
 
 class User(db.Model):
+    __tablename__ = 'user' 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(200), nullable=False, unique=True)
@@ -22,6 +23,7 @@ class User(db.Model):
 
 
 class Note(db.Model):
+    __tablename__ = 'note' 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80))
     content = db.Column(db.String(100), nullable=False)

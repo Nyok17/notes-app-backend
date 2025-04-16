@@ -1,11 +1,11 @@
 from flask import Flask
-from app.config import Config
+from app.config import DevelopmentConfig, ProductionConfig
 from app.extensions import db, marsh, bcrypt, jwt, cors
 import os
 
 
 
-def create_app(config_class=Config):
+def create_app(config_class=DevelopmentConfig):
     """A function to and configure flask app"""
     app = Flask(__name__)
     app.config.from_object(config_class)

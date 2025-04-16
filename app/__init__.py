@@ -1,6 +1,6 @@
 from flask import Flask
 from app.config import DevelopmentConfig, ProductionConfig
-from app.extensions import db, marsh, bcrypt, jwt, cors
+from app.extensions import db, marsh, bcrypt, jwt, cors, migrate
 import os
 
 
@@ -16,6 +16,7 @@ def create_app(config_class=DevelopmentConfig):
     jwt.init_app(app)
     marsh.init_app(app)
     cors.init_app(app)
+    migrate.init_app(app, db)
 
 
 

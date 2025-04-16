@@ -40,7 +40,7 @@ def register_users():
         return jsonify({"status":"error", "message": "Email already exists"}), 400
     except Exception as e:
         db.session.rollback()
-        return jsonify({"status":"error", "message": "Unexpected error occurred"}), 500
+        return jsonify({"status":"error", "message": str(e)}), 500
 
 @auth_bp.route('/login', methods=['POST'])
 def login_users():

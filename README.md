@@ -66,5 +66,8 @@ Pull requests are welcome. For major changes, open an issue first to discuss wha
 - JWT and Bcrypt for Authorization features
 - Flask & SQLAlchemy
 
+  11. Project URL
+   -https://roadmap.sh/projects/markdown-note-taking-app
+
 
 

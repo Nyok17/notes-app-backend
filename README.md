@@ -7,9 +7,10 @@ A simple note taking backend built with Python flask and SQL. Users are able reg
 
 3. Demo
 It is integrated with frontend(React) and it is live on Vercel = https://notes-app-six-kappa-92.vercel.app
+Backend is running on heroku at = https://notes-app1738-8a7df68e8a41.herokuapp.com
 
 
-4. Features
+5. Features
 ##Features
 -🔒 User authentication with JWT
 -🗒️ Add, edit and delete notes
@@ -17,7 +18,7 @@ It is integrated with frontend(React) and it is live on Vercel = https://notes-a
 -📦 Deployed backend on heroku and frontend on Vercel
 
 
-5. Tech Stack
+6. Tech Stack
 ## Tech Stack
 **Frontend:** React, TailwindCSS  
 **Backend:** Flask, SQLAlchemy, SQLite  

@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from datetime import timedelta
 
-load_dotenv()
+load_dotenv()  # Load environment variables from .env file
 
 class Config:
     """Base configuration"""

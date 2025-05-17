@@ -23,8 +23,7 @@ def register_users():
     try:
         data = user_schema.load(request.json)  #validate and deserializes(converts json to python dict) data from the request body
         new_user = User(name=data['name'], email=data['email']) #Just like raw SQL queries, you indicate the values being input into the columns
-        new_user.password = data['password']
-        print(new_user.password_hash)
+        new_user.password = data['password']  # This uses the password setter which applies hashing
         db.session.add(new_user)
         db.session.commit()
         return jsonify({

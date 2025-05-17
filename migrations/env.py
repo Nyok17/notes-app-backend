@@ -26,10 +26,21 @@ def get_engine():
 
 def get_engine_url():
     try:
-        return get_engine().url.render_as_string(hide_password=False).replace(
+        return get_engine().url.render_as_string(hide_password=True).replace(
             '%', '%%')
     except AttributeError:
-        return str(get_engine().url).replace('%', '%%')
+        # For older SQLAlchemy versions where render_as_string isn't available
+        # Use URL.to_string() with hide_password=True if available, otherwise mask the URL manually
+        url = get_engine().url
+        if hasattr(url, 'to_string'):
+            return url.to_string(hide_password=True).replace('%', '%%')
+        else:
+            # Create a masked URL string manually (last resort fallback)
+            url_parts = str(url).split('@')
+            if len(url_parts) > 1:
+                auth_parts = url_parts[0].split('//')
+                return f"{auth_parts[0]}//*****:*****@{url_parts[1]}".replace('%', '%%')
+            return str(url).replace('%', '%%')
 
 
 # add your model's MetaData object here
